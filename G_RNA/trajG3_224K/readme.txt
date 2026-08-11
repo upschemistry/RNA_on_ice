@@ -1,0 +1,1 @@
+This run is intended to explore the stability of the theta=80 degree position of the ribose bisector. So it's an unconstrained run, but pull code is specified in setup.mdp so that we can look at how theta evolves over time.

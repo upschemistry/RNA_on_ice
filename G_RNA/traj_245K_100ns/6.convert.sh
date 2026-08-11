@@ -1,0 +1,1 @@
+echo 0 | gmx trjconv -f confout.gro -o confout.pdb

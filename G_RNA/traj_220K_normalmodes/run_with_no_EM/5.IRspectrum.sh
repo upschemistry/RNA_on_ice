@@ -1,0 +1,1 @@
+echo 1 | gmx velacc -f traj.trr -n ../../index.ndx -os

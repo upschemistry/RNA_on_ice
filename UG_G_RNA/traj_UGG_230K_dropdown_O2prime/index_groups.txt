@@ -1,0 +1,13 @@
+a P
+a O1P
+a O2P
+a O3P
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 18 frozen
+a 60
+name 19 free_O2p_of_dimer
+a 62
+name 20 free_O3p_of_dimer
+a 64
+name 21 P_of_monomer
+q

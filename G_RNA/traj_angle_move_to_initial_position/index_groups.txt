@@ -1,0 +1,13 @@
+a P
+a O1P
+a O2P
+a O3P
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 15 frozen
+a O4'
+a C2'
+a C3'
+a C2' C3'
+name 19 C2C3
+q
+

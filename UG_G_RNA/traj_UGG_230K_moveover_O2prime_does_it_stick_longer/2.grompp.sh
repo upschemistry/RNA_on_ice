@@ -1,0 +1,1 @@
+gmx grompp -c ../moveover_O2prime_does_it_stick/confout.gro -f setup.mdp -p ../topol.top -n ../traj_UGG_230K_dropdown_O2prime/index.ndx -maxwarn 5

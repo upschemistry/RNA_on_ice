@@ -1,0 +1,37 @@
+I've tried getting the covariance matrix using this command:
+
+echo 2 | gmx covar -f ../traj_220K_500ps_heavy_N3/traj.trr -s topol.tpr -n ../index.ndx -o eigenval.xvg -v eigenvec.trr -av covar.gro
+
+And that does allow one to visualize those "modes" (with Look_at_results.ipynb). The vectors appearing in eigenvec.trr (after the first one) seem to be displacements. But I don't know the frequencies associated with them, so it doesn't help much in interpreting the IR spectra.
+
+Similar complaing about anaig:
+
+gmx anaeig -v eigenvec.trr -f ../traj_220K_500ps_heavy_N3/traj_28.trr -n ../index.ndx -comp -filt -first -1
+
+which allows visualization, but I think they are projections of the actual trajectory onto those modes, again not telling me what the frequencies are.
+
+This seemed to run:
+
+gmx mdrun -s ../traj_220K_500ps/topol.tpr -nt 21 -mtx &
+
+However, I think because the previous topol.tpr was used, this didn't produce a .mtx file. If I re-create a local .tpr file with the "nm" integrator specified, then when I run mdrun again, I get a fatal error:
+
+Fatal error:
+Constraints present with Normal Mode Analysis, this combination is not supported
+
+This is even when I try to remove constraints from setup.mdp. 
+
+This is a useful resource: https://personalpages.manchester.ac.uk/staff/tom.rodgers/modelling/gromacs_instructions.htm
+
+---------------------------
+
+Notes from July 7, 2026
+
+OK, here's a methodology (for getting the C=O stretch)
+
+1. For the undriven system, isolate (calculate) the C=O stretch coordinate, find its power spectrum, and look for the highest peak. This occurs at 56.2 ps-1 (1873 cm-1). The RMS motion of C=O is 4.1%. Examination of the covariance modes shows that mode #90 is the C=O stretch -- a very clean spectrum at 56.2 as a matter of fact.
+
+2. Drive with an EM pulse at that frequency to amplify the mode, and check the C=O stretch coordinate's RMS deviation. If it's bigger, it's an indication that it's the C=O stretch mode. In the case of 56.2 ps-1 (1873 cm-1), the driven RMS motion is bigger than in the undriven system, at 5.8%, so that's a positive indicator. To check this conclusion, we can do the covariance analysis and look around for a mode that has a high amplitude in the C=O stretch at that frequency. Examination of those modes indicates that modes #90 and 91 seem to have a large contribution from the C=O stretch.
+
+Conclusion: 1873 cm-1 is almost surely the C=O stretch.
+

@@ -1,0 +1,1 @@
+This is a long (100 ns) trajectory to see how the RNA monomer G situates itself on the ice surface

@@ -1,0 +1,19 @@
+a 33
+a 34
+a 66
+a 67
+a 99
+a 100
+a 132
+a 133
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 9 2G_O1P
+name 10 2G_O2P
+name 11 3G_O1P
+name 12 3G_O2P
+name 13 4G_O1P
+name 14 4G_O2P
+name 15 5G_O1P
+name 16 5G_O2P
+name 17 frozen
+q

@@ -1,0 +1,1 @@
+gmx grompp -c ../traj_UGG_230K_does_it_stick_longer/confout.gro -f setup.mdp -p ../topol.top -n ../traj_UGG_230K_dropdown/index.ndx -maxwarn 5
