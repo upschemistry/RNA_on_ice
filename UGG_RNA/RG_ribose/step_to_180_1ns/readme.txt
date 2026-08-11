@@ -1,0 +1,3 @@
+The "setup.mdp" file includes code that will move the ribose bisecting vector from the final trajectory in ../UGG_RNA/move_to_initial_position/confout.gro/ to 180 degrees. The Jupyter notebook has a cell that will use the corresponding PMF information to find energy minima. 
+
+All the .sh files and code in the folder use the index from /MD/UGG_RNA/ that includes the ribose bisector pull code groups.

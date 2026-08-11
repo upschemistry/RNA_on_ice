@@ -1,0 +1,1 @@
+This folder was created in April 2025 to be sure that all the .sh files are working (they are).

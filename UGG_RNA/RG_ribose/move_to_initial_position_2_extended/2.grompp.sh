@@ -1,0 +1,1 @@
+gmx grompp -c confout_10ns.gro -f setup.mdp -p ../topol.top -n ../index.ndx -maxwarn 5

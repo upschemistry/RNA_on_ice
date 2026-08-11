@@ -1,0 +1,37 @@
+;
+;	File 'topol_Ion2.itp' was generated
+;	By user: root (1000)
+;	On host: Cas2
+;	At date: Mon Jun 23 09:53:14 2025
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2020.3 (-:
+;	
+;	Executable:   /usr/local/gromacs/bin/gmx
+;	Data prefix:  /usr/local/gromacs
+;	Working dir:  /home/chemistry/MD/UGG_RNA
+;	Command line:
+;	  gmx pdb2gmx -f System0.gro -ignh
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion2                3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 2887 NA  rtp NA   q +1.0
+     1         Na   2887     NA     NA      1          1      22.99   ; qtot 1
+; residue 2888 NA  rtp NA   q +1.0
+     2         Na   2888     NA     NA      2          1      22.99   ; qtot 2
+; residue 2889 NA  rtp NA   q +1.0
+     3         Na   2889     NA     NA      3          1      22.99   ; qtot 3
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion2.itp"
+#endif
+

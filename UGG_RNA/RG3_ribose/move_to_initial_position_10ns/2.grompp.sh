@@ -1,0 +1,1 @@
+gmx grompp -c /home/MD/UGG_RNA/System0.gro -f setup.mdp -p /home/MD/UGG_RNA/topol.top -n index.ndx -maxwarn 5

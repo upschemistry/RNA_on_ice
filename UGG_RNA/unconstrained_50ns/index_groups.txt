@@ -1,0 +1,14 @@
+a P
+a O1P
+a O2P
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 12 frozen
+a 30
+a 31
+a 64
+a 65
+name 13 RG_O1P
+name 14 RG_O2P
+name 15 RG3_O1P
+name 16 RG3_O2P
+q

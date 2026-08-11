@@ -1,0 +1,19 @@
+a 32
+a 33
+a 64
+a 65
+a 96
+a 97
+a 128
+a 129
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 9 T2_O1P
+name 10 T2_O2P
+name 11 T3_O1P
+name 12 T3_O2P
+name 13 T4_O1P
+name 14 T4_O2P
+name 15 T5_O1P
+name 16 T5_O2P
+name 17 frozen
+q

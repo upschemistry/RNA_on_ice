@@ -1,0 +1,1 @@
+All of the subfolders and files in this folder concern the terminal 3' end ribose (RG3).
