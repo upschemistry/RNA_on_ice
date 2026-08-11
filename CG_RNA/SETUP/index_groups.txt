@@ -1,0 +1,21 @@
+a P
+a O1P
+a O2P
+a O5' 
+a H5T
+a H3T
+
+r 1507 1508 1509 1510 1511 1512 1513 1514 1515
+name 15 frozen
+
+a 27 28
+name 16 HO'2C
+
+a 61 62
+name 17 HO'2G
+
+a 17 18 19 20
+name 18 CHBAC
+
+q
+
