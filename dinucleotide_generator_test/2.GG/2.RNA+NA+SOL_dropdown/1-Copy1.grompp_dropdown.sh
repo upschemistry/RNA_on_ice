@@ -1,0 +1,1 @@
+gmx grompp -maxwarn 3 -v -c System1.gro -p topol_GG.top -f dropdown.mdp -o dropdown.tpr -n ../index.ndx

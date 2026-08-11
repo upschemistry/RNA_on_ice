@@ -1,0 +1,1 @@
+gmx grompp -maxwarn 3 -v -c ../2.RNA+NA+SOL_dropdown/dropdown.gro -p topol_GG.top -f mdrun.mdp -o mdrun.tpr -n ../index.ndx

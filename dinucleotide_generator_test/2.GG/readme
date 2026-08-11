@@ -1,0 +1,70 @@
+Drop into 1.GG (or equivalent)
+
+In 1.RNA,
+
+
+Create a new gro file (GG.gro). Here it's done by stripping out the other nucleotides from the longer chain, original_8_nucleotide.gro, including leading phosphate, patching in H5T at the top in the location that the P was, just above the first O5', and H3T at the bottom, just below the last O3'. Also have to change the number of atoms given in the second line.
+
+
+Renumber the gro file: gmx editconf -f GG.gro -o GG_renum.gro.
+
+
+Create a topology file: gmx pdb2gmx -f GG_renum.gro -p topol_GG.top, choosing "1. AMBER03 protein ..." and "7: None" for the water model. [If we want to run a trajectory here, we'd need to edit this file so that forcefield specifies the right address, and include ions, but we'll skip that step for now.]
+
+
+Edit 1.align.sh so that it refers to GG_renum.gro, and executed it. This will create various aligned and shifted gro files. (Probably have to come back to this .sh file, possibly, to adjust these alignments.)
+
+
+run Look_at_results.ipynb to inspect these configurations.
+
+
+Now shift to 2.RNA+NA+SOL_dropdown and copy topol_GG.top over from 1.RNA. Editing this file:
+
+...
+
+; Include forcefield parameters
+#include "/home/chemistry/MD/amber_na.ff/forcefield.itp"
+
+[ moleculetype ]
+; Name            nrexcl
+RNA                 3
+
+...
+
+
+; Include water topology
+#include "/home/chemistry/MD/amber_na.ff/tip4pd.itp"
+
+; Include topology for ions
+#include "/home/chemistry/MD/amber_na.ff/ions.itp"
+
+[ system ]
+; Name
+GG
+
+[ molecules ]
+; Compound        #mols
+RNA            1
+NA             1
+SOL         2880
+
+
+Also need to populate this folder with a water slab (like "SOL_annealed.gro") and a sodium ion "NA.gro").
+
+Now run "Constructing the system.ipynb", cycling back to modifying the shift and rotation in 1.align.sh so that the RNA is sitting atop the ice properly. The result of this is a file called System1.gro.
+
+
+Now move up a level and create an index file using ./make_index.sh. 
+
+
+Move back down to 2.RNA+NA+SOL_dropdown and run 1.grompp_dropdown.sh and 2.mdrun_dropdown.sh
+
+
+To start a longer trajectory, copy over the key files (.mdp, .sh). Change the name of the .sh files (e.g., from 1.grompp_dropdown.sh to 1.grompp.sh). Also, edit the 1.grompp.sh file so that it picks up as a starting configuration the .gro file from the 2.RNA+NA+SOL_dropdown file (instead of System1.gro).
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+a P
+a O1P
+a O2P
+a O2'
+a HO'2 
+a O5' 
+a H5T
+a O2
+a O3'
+a H3T
+a 4794 4762 4442 4114
+name 19 frozen
+q
+ 
